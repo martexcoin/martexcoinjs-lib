@@ -70,7 +70,7 @@ HDNode.fromBase58 = function (string, networks) {
 
   // otherwise, assume a network object (or default to bitcoin)
   } else {
-    network = networks || NETWORKS.peercoin
+    network = networks || NETWORKS.martexcoin
   }
 
   if (version !== network.bip32.private &&

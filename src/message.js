@@ -17,7 +17,7 @@ function magicHash (message, network) {
 }
 
 function sign (keyPair, message, network) {
-  network = network || networks.peercoin
+  network = network || networks.martexcoin
 
   var hash = magicHash(message, network)
   var signature = keyPair.sign(hash)
@@ -32,7 +32,7 @@ function verify (address, signature, message, network) {
     signature = new Buffer(signature, 'base64')
   }
 
-  network = network || networks.peercoin
+  network = network || networks.martexcoin
 
   var hash = magicHash(message, network)
   var parsed = ECSignature.parseCompact(signature)

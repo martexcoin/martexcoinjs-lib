@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-PeercoinJS = require('bitcoinjs-lib');
+MartexcoinJS = require('bitcoinjs-lib');
 
 },{"bitcoinjs-lib":45}],2:[function(require,module,exports){
 // (public) Constructor
@@ -5609,27 +5609,39 @@ module.exports = {
 // https://en.bitcoin.it/wiki/List_of_address_prefixes
 // Dogecoin BIP32 is a proposed standard: https://bitcointalk.org/index.php?topic=409731
 
+/*
+pubkeyhash: 0x32,
+  privatekey: 0xb2,
+  scripthash: 0x05,
+  xpubkey: 0x0488b21e,
+  xprivkey: 0x0488ade4,
+  networkMagic: 0x2d3fa2f5,
+
+const std::string strMessageMagic = "MarteX Signed Message:\n";
+*/
+
+
 module.exports = {
   bitcoin: {
-    messagePrefix: '\x17PPCoin Signed Message:\n',
+    messagePrefix: 'MarteX Signed Message:\n',
     bip32: {
-      public: 0x01da950b,  // start with "Ppub..."
-      private: 0x01da90d0  // start with "Pprv..."
+      public: 0x0488b21e,  // start with "xpub..."
+      private: 0x0488ade4  // start with "xprv..."
     },
-    pubKeyHash: 0x37,
-    scriptHash: 0x75,
-    wif: 0xb7,
+    pubKeyHash: 0x32,
+    scriptHash: 0x05,
+    wif: 0xb2,
     dustThreshold: 0
   },
-  peercoin: {
-    messagePrefix: '\x17PPCoin Signed Message:\n',
+  martexcoin: {
+    messagePrefix: 'MarteX Signed Message:\n',
     bip32: {
-      public: 0x01da950b,  // start with "Ppub..."
-      private: 0x01da90d0  // start with "Pprv..."
+      public: 0x0488b21e,  // start with "xpub..."
+      private: 0x0488ade4  // start with "xprv..."
     },
-    pubKeyHash: 0x37,
-    scriptHash: 0x75,
-    wif: 0xb7,
+    pubKeyHash: 0x32,
+    scriptHash: 0x05,
+    wif: 0xb2,
     dustThreshold: 0
   },
   testnet: {
@@ -5642,7 +5654,7 @@ module.exports = {
     scriptHash: 0xc4,
     wif: 0xef,
     dustThreshold: 546
-  } 
+  }
 }
 
 },{}],48:[function(require,module,exports){
@@ -6722,7 +6734,7 @@ function TransactionBuilder (network) {
   this.prevTxMap = {}
   this.prevOutScripts = {}
   this.prevOutTypes = {}
-  this.network = network || networks.peercoin
+  this.network = network || networks.martexcoin
 
   this.inputs = []
   this.tx = new Transaction()

@@ -1,6 +1,6 @@
-# PeercoinJS (bitcoinjs-lib)
+# MartexcoinJS (bitcoinjs-lib)
 
-The pure JavaScript Peercoin library for node.js and browsers.
+The pure JavaScript Martexcoin library for node.js and browsers.
 Used by over a million wallet users and the backbone for almost all Bitcoin web wallets in production today.
 
 
@@ -12,7 +12,7 @@ Used by over a million wallet users and the backbone for almost all Bitcoin web 
 
 ### Node.js
 
-    var peercoin = require('peercoinjs-lib')
+    var martexcoin = require('martexcoinjs-lib')
 
 
 ### Browser
@@ -27,7 +27,7 @@ From your repository, create a `foobar.js` file
 ``` javascript
 var foobar = {
   base58: require('bs58'),
-  bitcoin: require('peercoinjs-lib'),
+  bitcoin: require('martexcoinjs-lib'),
   ecurve: require('ecurve'),
   BigInteger: require('bigi'),
   Buffer: require('buffer')
@@ -36,8 +36,8 @@ var foobar = {
 module.exports = foobar
 ```
 
-Each of these included packages are separate to `peercoinjs-lib`, and must be installed separately.
-They are however used in the peercoinjs-lib public API.
+Each of these included packages are separate to `martexcoinjs-lib`, and must be installed separately.
+They are however used in the martexcoinjs-lib public API.
 
 Using browserify, compile `foobar.js` for use in the browser:
 

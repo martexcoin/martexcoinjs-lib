@@ -16,7 +16,7 @@ function fromBase58Check (address) {
 }
 
 function fromOutputScript (scriptPubKey, network) {
-  network = network || networks.peercoin
+  network = network || networks.martexcoin
 
   if (bscript.isPubKeyHashOutput(scriptPubKey)) return toBase58Check(bscript.compile(scriptPubKey).slice(3, 23), network.pubKeyHash)
   if (bscript.isScriptHashOutput(scriptPubKey)) return toBase58Check(bscript.compile(scriptPubKey).slice(2, 22), network.scriptHash)
@@ -35,7 +35,7 @@ function toBase58Check (hash, version) {
 }
 
 function toOutputScript (address, network) {
-  network = network || networks.peercoin
+  network = network || networks.martexcoin
 
   var decode = fromBase58Check(address)
   if (decode.version === network.pubKeyHash) return bscript.pubKeyHashOutput(decode.hash)

@@ -35,7 +35,7 @@ function ECPair (d, Q, options) {
   }
 
   this.compressed = options.compressed === undefined ? true : options.compressed
-  this.network = options.network || NETWORKS.peercoin
+  this.network = options.network || NETWORKS.martexcoin
 }
 
 Object.defineProperty(ECPair.prototype, 'Q', {
@@ -70,7 +70,7 @@ ECPair.fromWIF = function (string, network) {
     if (!network) throw new Error('Unknown network version')
   }
 
-  network = network || NETWORKS.peercoin
+  network = network || NETWORKS.martexcoin
   var decoded = wif.decodeRaw(buffer, network.wif)
   var d = BigInteger.fromBuffer(decoded.privateKey)
 

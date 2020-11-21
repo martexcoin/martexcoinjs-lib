@@ -142,7 +142,7 @@ function TransactionBuilder (network) {
   this.prevTxMap = {}
   this.prevOutScripts = {}
   this.prevOutTypes = {}
-  this.network = network || networks.peercoin
+  this.network = network || networks.martexcoin
 
   this.inputs = []
   this.tx = new Transaction()

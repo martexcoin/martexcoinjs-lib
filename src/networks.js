@@ -2,15 +2,15 @@
 // Dogecoin BIP32 is a proposed standard: https://bitcointalk.org/index.php?topic=409731
 
 module.exports = {
-  peercoin: {
-    messagePrefix: '\x17PPCoin Signed Message:\n',
+  martexcoin: {
+    messagePrefix: 'MarteX Signed Message:\n',
     bip32: {
-      public: 0x01da950b,  // start with "Ppub..."
-      private: 0x01da90d0  // start with "Pprv..."
+      public: 0x0488b21e,  // start with "xpub..."
+      private: 0x0488ade4  // start with "xprv..."
     },
-    pubKeyHash: 0x37,
-    scriptHash: 0x75,
-    wif: 0xb7,
-    dustThreshold: 0  
+    pubKeyHash: 0x32,
+    scriptHash: 0x05,
+    wif: 0xb2,
+    dustThreshold: 0
   }
 }
